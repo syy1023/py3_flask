@@ -11,6 +11,12 @@ def index():
 '当请求的地址符合路由规则时，就会进入该函数。MVC中的model'
 
 
+'在url中定义参数'
+@app.route('/hi/<name>')
+def hello(name):
+    return "<h3>hi,%s</h3>"%name
+
+
 if __name__=='__main__':
     app.run(host='0.0.0.0', port=8888, debug=True)
 
