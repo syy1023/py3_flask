@@ -1,0 +1,9 @@
+
+Flask提供了”url_for()”方法来快速获取及构建URL，
+方法的第一个参数指向函数名（加过”@app.route”注解的函数），
+后续的参数对应于要构建的URL变量。下面是几个例子:
+
+url_for('login')    # 返回/login
+url_for('login', id='1')    # 将id作为URL参数，返回/login?id=1
+url_for('hello', name='man')    # 适配hello函数的name参数，返回/hello/man
+url_for('static', filename='style.css')    # 静态文件地址，返回/static/style.css
