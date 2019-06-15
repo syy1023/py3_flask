@@ -1,0 +1,8 @@
+{% extends "parent_layout.html" %}
+{% block body %}
+<form name="login" action="/login" method="POST">
+    Hi {{title}},please login by your name:
+    <input type="text" name="user" />
+</form>
+
+{% endblock %}
