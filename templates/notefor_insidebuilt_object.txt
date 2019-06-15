@@ -1,0 +1,17 @@
+Flask提供的内建对象常用的有request, session, g，
+通过request，你还可以获取cookie对象。
+这些对象不但可以在请求函数中使用，在模板中也可以使用
+
+
+
+request中”method”变量可以获取当前请求的方法，
+即”GET”, “POST”, “DELETE”, “PUT”等；”form”变量是一个字典，
+可以获取Post请求表单中的内容，
+在上例中，如果提交的表单中不存在”user”项，则会返回一个”KeyError”，
+你可以不捕获，页面会返回400错误（想避免抛出这”KeyError”，你可以用request.form.get(“user”)来替代）。
+而”request.args.get()”方法则可以获取Get请求URL中的参数，该函数的第二个参数是默认值，当URL参数不存在时，则返回默认值。
+
+
+前端使用form获取传入的参数
+
+
