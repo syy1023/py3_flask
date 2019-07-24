@@ -1,0 +1,9 @@
+”admin”登陆成功后，再打开”login”页面就不会出现表单了。
+session对象的操作就跟一个字典一样。特别提醒，
+使用session时一定要设置一个密钥”app.secret_key”，如上例。不然你会得到一个运行时错误，
+
+内容大致是”RuntimeError: the session is unavailable because no secret key was set”。
+密钥要尽量复杂，最好使用一个随机数，这样不会有重复，上面的例子不是一个好密钥
+
+
+记住上一个登录的user状态

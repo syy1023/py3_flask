@@ -2,6 +2,7 @@ from flask import request
 from flask import Flask
 from flask import render_template
 from flask import session
+from flask import redirect
 
 app=Flask(__name__)
 @app.route('/login',methods=['POST','GET'])
@@ -23,6 +24,10 @@ def login(user=None):
 
 app.secret_key='12345'
 
+@app.route('/logout')
+def logout():
+    session.pop('user',None)
+    return redirect(url_for('login'))
 
 
 
